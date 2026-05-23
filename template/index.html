@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+<head>
+    <title>Gaussian Elimination Calculator</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <h1>Gaussian Elimination Solver</h1>
+
+    <form method="POST">
+        <input name="eq1" placeholder="6x-2y-4z=16"><br>
+        <input name="eq2" placeholder="-2x+10y-8z=-40"><br>
+        <input name="eq3" placeholder="-4x-8y+18z=0"><br>
+        <button type="submit">Solve</button>
+    </form>
+
+    <h2>Method Explanation</h2>
+    <p>
+        Gaussian elimination transforms a system of linear equations into upper triangular form,
+        then solves using back substitution.
+    </p>
+
+    <h2>Example 1</h2>
+
+    <p>Given system:</p>
+        <p>$$
+        \begin{cases}
+        6x - 2y - 4z = 16 \\
+        -2x + 10y - 8z = -40 \\
+        -4x - 8y + 18z = 0
+        \end{cases}
+        $$</p>
+
+        <p><b>Step 1: Convert to augmented matrix</b></p>
+        <p>$$
+        \begin{bmatrix}
+        6 & -2 & -4 & | 16 \\
+        -2 & 10 & -8 & | -40 \\
+        -4 & -8 & 18 & | 0
+        \end{bmatrix}
+        $$</p>
+
+        <p><b>Step 2: Eliminate below pivot</b></p>
+        <p>Continue row operations...</p>
+
+        <p><b>Step 3: Back substitution</b></p>
+        <p>Final solution: x = 2, y = -2, z = 1</p>
+
+    <h2>Example 2</h2>
+    <p>Another full worked example</p>
+
+</body>
+</html>
