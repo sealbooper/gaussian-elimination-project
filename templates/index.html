@@ -1,54 +1,120 @@
-<!DOCTYPE html> 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Gaussian Elimination Calculator</title>
+<meta charset="UTF-8">
+<title>Gaussian Elimination Solver</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<style>
+/* 🌐 Background with green grid */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background-color: #0a0a0a;
+
+    /* GRID LINES */
+    background-image:
+        linear-gradient(rgba(0, 255, 0, 0.2) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 0, 0.2) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+}
+
+/* 📄 Center white panel */
+.main-container {
+    width: 800px;
+    min-height: 100vh;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* 🧱 Sections */
+.section {
+    margin-bottom: 40px;
+}
+
+/* 🧮 Inputs */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* 🔘 Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #15803d;
+}
+
+/* 🧠 Headings */
+h1, h2 {
+    text-align: center;
+}
+
+/* ✨ Optional: nicer text */
+p {
+    line-height: 1.6;
+}
+</style>
 </head>
+
 <body>
+
+<div class="main-container">
+
     <h1>Gaussian Elimination Solver</h1>
 
-    <form method="POST">
-        <input name="eq1" placeholder="6x-2y-4z=16"><br>
-        <input name="eq2" placeholder="-2x+10y-8z=-40"><br>
-        <input name="eq3" placeholder="-4x-8y+18z=0"><br>
-        <button type="submit">Solve</button>
-    </form>
+    <!-- 🔹 Calculator -->
+    <div class="section">
+        <h2>Calculator</h2>
 
-    <h2>Method Explanation</h2>
-    <p>
-        Gaussian elimination transforms a system of linear equations into upper triangular form,
-        then solves using back substitution.
-    </p>
+        <form method="POST">
+            <input name="eq1" placeholder="6x-2y-4z=16" required>
+            <input name="eq2" placeholder="-2x+10y-8z=-40" required>
+            <input name="eq3" placeholder="-4x-8y+18z=0" required>
+            <button type="submit">Solve</button>
+        </form>
+    </div>
 
-    <h2>Example 1</h2>
+    <!-- 🔹 Explanation -->
+    <div class="section">
+        <h2>What is Gaussian Elimination?</h2>
+        <p>
+            Gaussian elimination is a method used to solve systems of linear equations
+            by transforming them into an upper triangular matrix and applying back substitution.
+        </p>
+    </div>
 
-    <p>Given system:</p>
+    <!-- 🔹 Example -->
+    <div class="section">
+        <h2>Example</h2>
+
         <p>$$
         \begin{cases}
-        6x - 2y - 4z = 16 \\
-        -2x + 10y - 8z = -40 \\
-        -4x - 8y + 18z = 0
+        x + y + z = 6 \\
+        2x + 3y + z = 11 \\
+        3x + y + 2z = 11
         \end{cases}
         $$</p>
+    </div>
 
-        <p><b>Step 1: Convert to augmented matrix</b></p>
-        <p>$$
-        \begin{bmatrix}
-        6 & -2 & -4 & | 16 \\
-        -2 & 10 & -8 & | -40 \\
-        -4 & -8 & 18 & | 0
-        \end{bmatrix}
-        $$</p>
-
-        <p><b>Step 2: Eliminate below pivot</b></p>
-        <p>Continue row operations...</p>
-
-        <p><b>Step 3: Back substitution</b></p>
-        <p>Final solution: x = 2, y = -2, z = 1</p>
-
-    <h2>Example 2</h2>
-    <p>Another full worked example</p>
+</div>
 
 </body>
 </html>
