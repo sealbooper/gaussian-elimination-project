@@ -36,11 +36,20 @@ def gauss_elim(A, B):
     n = len(B)
     augmented = np.concatenate((A, B), axis=1)
 
+    steps = []
+
+    # Save initial matrix
+    steps.append("Initial Augmented Matrix:")
+    steps.append([[str(val) for val in row] for row in augmented])
+
     # Forward elimination
     for i in range(n):
         for j in range(i+1, n):
             factor = augmented[j][i] / augmented[i][i]
             augmented[j] -= factor * augmented[i]
+
+            steps.append(f"R{j+1} = R{j+1} - ({factor})R{i+1}")
+            steps.append([[str(val) for val in row] for row in augmented])
 
     # Back substitution
     x = np.zeros(n, dtype=object)
@@ -48,4 +57,4 @@ def gauss_elim(A, B):
         sum_ax = sum(augmented[i][j] * x[j] for j in range(i+1, n))
         x[i] = (augmented[i][n] - sum_ax) / augmented[i][i]
 
-    return x
+    return x, steps

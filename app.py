@@ -22,9 +22,9 @@ def index():
         A = np.array(A, dtype=object)
         B = np.array(B, dtype=object)
 
-        result = gauss_elim(A, B)
+        result, steps = gauss_elim(A, B)
 
-        return render_template("result.html", result=result)
+        return render_template("index.html", result=result, steps=steps)
 
     return render_template("index.html")
 
