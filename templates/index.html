@@ -165,24 +165,6 @@ p {
         {% endif %}
 
     </div>
-    
-    {% if steps is not none %}
-    <div class="section">
-        <h2>Step-by-Step Solution</h2>
-
-        {% for step in steps %}
-            {% if step is string %}
-                <p><b>{{ step }}</b></p>
-            {% else %}
-                <pre>
-    {% for row in step %}
-    {{ row }}
-    {% endfor %}
-                </pre>
-            {% endif %}
-        {% endfor %}
-    </div>
-    {% endif %}
 
     <!-- 🔹 Discussion -->
     <div class="section content-section" id="discussion">
