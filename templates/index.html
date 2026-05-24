@@ -15,7 +15,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/*Matrix pattern */
+/* Background */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -41,7 +41,7 @@ body {
     box-shadow: 0 0 25px rgba(0,0,0,0.5);
 }
 
-/* 🧭 Navigation */
+/* Navigation */
 .nav {
     display: flex;
     justify-content: center;
@@ -56,6 +56,8 @@ body {
     padding: 20px 40px;
     border-radius: 16px;
     font-weight: bold;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
     cursor: pointer;
 }
 
@@ -63,12 +65,12 @@ body {
     background: #15803d;
 }
 
-/* 🧱 Sections */
+/* Sections */
 .section {
     margin-bottom: 60px;
 }
 
-/* 🧾 CARD STYLE */
+/* Cards */
 .card {
     background: white;
     border-radius: 12px;
@@ -86,13 +88,16 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 48px;
+    font-size: 56px;
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 40px;
+    font-weight: 600;
 }
 
+/* KEEP your large body text */
 p {
     font-size: 32px;
     color: #374151;
@@ -102,28 +107,41 @@ p {
 /* Inputs */
 input {
     width: 100%;
-    padding: 24px;
-    margin: 10px 0;
-    border-radius: 6px;
+    padding: 28px;
+    margin: 14px 0;
+    border-radius: 8px;
     border: 1px solid #ccc;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
 }
 
-/* Button */
+/* Placeholder */
+input::placeholder {
+    font-size: 28px;
+    color: #9ca3af;
+}
+
+/* Solve button */
 button[type="submit"] {
     width: 100%;
-    padding: 24px;
+    padding: 28px;
     background: #16a34a;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 32px;
+    border-radius: 8px;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     cursor: pointer;
 }
 
 /* Step display */
 pre {
     text-align: center;
-    font-size: 32px;
+    font-size: 28px;
+    font-family: 'Inter', monospace;
 }
 
 /* Hide sections */
@@ -146,7 +164,7 @@ pre {
     <button onclick="showSection('calculator')">Calculator</button>
 </div>
 
-<!-- 🔹 Calculator -->
+<!-- Calculator -->
 <div class="section content-section" id="calculator">
     <h2>Calculator</h2>
 
@@ -190,7 +208,7 @@ pre {
     {% endif %}
 </div>
 
-<!-- 🔹 Discussion -->
+<!-- Discussion -->
 <div class="section content-section" id="discussion">
     <h2>What is Gaussian Elimination?</h2>
 
@@ -202,7 +220,7 @@ pre {
     </div>
 </div>
 
-<!-- 🔹 Examples -->
+<!-- Examples -->
 <div class="section content-section" id="examples">
     <h2>Example</h2>
 
