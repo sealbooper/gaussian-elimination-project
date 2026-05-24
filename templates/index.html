@@ -218,46 +218,49 @@ pre {
         It works by transforming the system into an equivalent form that is easier to solve, 
         specifically an upper triangular matrix, and then applying back substitution to find the solution.
         </p>
-
+    </div>
+    
         <p><b>How Gaussian Elimination Works:</b><br>
         The method consists of two main stages: forward elimination and back substitution.
         </p>
-
+    <div class="card">     
         <p><b>1. Forward Elimination:</b><br>
         In this step, the system of equations is converted into an upper triangular matrix. 
         This is done by eliminating the variables below the main diagonal using elementary row operations. 
         These operations include swapping rows, multiplying a row by a nonzero constant, 
         and adding or subtracting multiples of rows.
         </p>
-
+    </div>    
         <p>
         The goal is to simplify the system so that each equation contains fewer variables than the previous one, 
         eventually forming a triangular structure.
         </p>
-
+    <div class="card">     
         <p><b>2. Back Substitution:</b><br>
         Once the matrix is in upper triangular form, the solution is obtained by solving the equations 
         starting from the last row and working upwards. Each solved variable is substituted into the 
         previous equations until all variables are determined.
         </p>
+    </div>
 
         <p><b>Properties of Gaussian Elimination:</b></p>
-
+    <div class="card"> 
         <p>
         • It preserves the solution of the system, meaning all transformations produce an equivalent system.<br>
         • It can determine whether a system has a unique solution, infinitely many solutions, or no solution.<br>
         • It works for any number of equations and unknowns, as long as the system is consistent.<br>
         • It is a foundational algorithm used in many numerical methods and computer-based calculations.
         </p>
-
+    </div>    
         <p><b>Types of Solutions:</b></p>
-
+    <div class="card">
         <p>
         • <b>Unique Solution:</b> Occurs when the system has exactly one solution.<br>
         • <b>Infinite Solutions:</b> Occurs when there are free variables, usually due to dependent equations.<br>
         • <b>No Solution:</b> Occurs when the system is inconsistent (e.g., a contradiction like 0 = 5 appears).
         </p>
-
+    </div>
+    <div class="card">     
         <p><b>Importance and Applications:</b><br>
         Gaussian elimination is widely used in engineering, physics, computer science, and mathematics. 
         It is essential for solving systems of equations, analyzing circuits, performing matrix operations, 
