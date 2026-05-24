@@ -176,16 +176,6 @@ pre {
             <button type="submit">Solve</button>
         </form>
     </div>
-
-    {% if result is not none %}
-    <div class="card">
-        <h2>Solution</h2>
-
-        {% for i in range(result|length) %}
-            <p style="text-align:center;">x{{i+1}} = {{result[i]}}</p>
-        {% endfor %}
-    </div>
-    {% endif %}
     
     {% if steps is not none %}
     <div class="section">
@@ -203,6 +193,16 @@ pre {
                     </pre>
                 {% endif %}
             </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+       {% if result is not none %}
+    <div class="card">
+        <h2>Solution</h2>
+
+        {% for i in range(result|length) %}
+            <p style="text-align:center;">x{{i+1}} = {{result[i]}}</p>
         {% endfor %}
     </div>
     {% endif %}
