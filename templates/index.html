@@ -96,7 +96,22 @@ h1, h2 {
 p {
     line-height: 1.6;
 }
+.nav button {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
 
+.nav button:hover {
+    background: #15803d;
+}
+.content-section {
+    display: none;
+}
 </style>
 </head>
 
@@ -106,15 +121,14 @@ p {
 
     <h1>Gaussian Elimination Solver</h1>
 
-    <!-- ✅ NAVIGATION (correct place) -->
     <div class="nav">
-        <a href="#discussion">Discussion</a>
-        <a href="#examples">Examples</a>
-        <a href="#calculator">Calculator</a>
+        <button onclick="showSection('discussion')">Discussion</button>
+        <button onclick="showSection('examples')">Examples</button>
+        <button onclick="showSection('calculator')">Calculator</button>
     </div>
 
     <!-- 🔹 Calculator -->
-    <div class="section" id="calculator">
+    <div class="section content-section" id="calculator">
         <h2>Calculator</h2>
 
         <form method="POST">
@@ -123,19 +137,36 @@ p {
             <input name="eq3" placeholder="-4x-8y+18z=0" required>
             <button type="submit">Solve</button>
         </form>
-    </div>
 
-        {% if result %}
-    <div class="section">
-        <h2>Solution</h2>
+        {% if result is not none %}
+        <div class="section">
+            <h2>Solution</h2>
 
-        {% for i in range(result|length) %}
-            <p>x{{i+1}} = {{result[i]}}</p>
-        {% endfor %}
+            {% for i in range(result|length) %}
+                <p>x{{i+1}} = {{result[i]}}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        {% if steps is not none %}
+        <div class="section">
+            <h2>Step-by-Step Solution</h2>
+
+            {% for step in steps %}
+                {% if step is string %}
+                    <p><b>{{ step }}</b></p>
+                {% else %}
+                    <pre>{% for row in step %}
+    {{ row }}
+    {% endfor %}</pre>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
     </div>
-    {% endif %}
     
-    {% if steps %}
+    {% if steps is not none %}
     <div class="section">
         <h2>Step-by-Step Solution</h2>
 
@@ -154,7 +185,7 @@ p {
     {% endif %}
 
     <!-- 🔹 Discussion -->
-    <div class="section" id="discussion">
+    <div class="section content-section" id="discussion">
         <h2>What is Gaussian Elimination?</h2>
         <p>
             Gaussian elimination is a method used to solve systems of linear equations
@@ -163,7 +194,7 @@ p {
     </div>
 
     <!-- 🔹 Examples -->
-    <div class="section" id="examples">
+    <div class="section content-section" id="examples">
         <h2>Example</h2>
 
         <p>$$
@@ -176,6 +207,20 @@ p {
     </div>
 
 </div>
+<script>
+function showSection(sectionId) {
+    // hide all
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(sec => sec.style.display = 'none');
 
+    // show selected
+    document.getElementById(sectionId).style.display = 'block';
+}
+
+// Show calculator by default on load
+window.onload = function() {
+    showSection('calculator');
+};
+</script>
 </body>
 </html>
