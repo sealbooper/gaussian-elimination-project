@@ -5,8 +5,8 @@
 <title>Gaussian Elimination Solver</title>
 
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<img src="{{ url_for('static', filename='images/UTM.png') }}" alt="UTM" class="image">
 
 <style>
 
@@ -79,6 +79,14 @@ body {
 
     border: 1px solid #e5e7eb;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
 }
 
 /* Typography */
@@ -230,11 +238,18 @@ pre {
         These operations include swapping rows, multiplying a row by a nonzero constant, 
         and adding or subtracting multiples of rows.
         </p>
-    </div>    
+  
         <p>
         The goal is to simplify the system so that each equation contains fewer variables than the previous one, 
         eventually forming a triangular structure.
         </p>
+    </div>  
+
+    <div class="card">
+     <img src="{{ url_for('static', filename='images/UTM.png') }}" alt="UTM">
+    </div>
+
+    </div>
     <div class="card">     
         <p><b>2. Back Substitution:</b><br>
         Once the matrix is in upper triangular form, the solution is obtained by solving the equations 
