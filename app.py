@@ -24,7 +24,9 @@ def index():
 
         result, steps = gauss_elim(A, B)
 
-        return render_template("index.html", result=result, steps=steps)
+        variables = ["x", "y", "z"]  # <-- IMPORTANT
+
+        return render_template("index.html", result=result, steps=steps, variables=variables)
 
     return render_template("index.html")
 
