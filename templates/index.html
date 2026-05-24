@@ -149,6 +149,10 @@ pre {
     text-align: center;
     font-size: 28px;
     font-family: 'Inter', monospace;
+    background: #111;
+    color: #00ff88;
+    padding: 15px;
+    border-radius: 10px;
 }
 
 /* Hide sections */
@@ -282,17 +286,121 @@ pre {
 
 <!-- Examples -->
 <div class="section content-section" id="examples">
-    <h2>Example</h2>
+    <h2>Worked Examples</h2>
 
+    <!-- ================= EXAMPLE 1 ================= -->
     <div class="card">
-        <p>$$
-        \begin{cases}
-        x + y + z = 6 \\
-        2x + 3y + z = 11 \\
+        <p><b>Example 1:</b></p>
+        <p>
+        x + y + z = 6 <br>
+        2x + 3y + z = 11 <br>
         3x + y + 2z = 11
-        \end{cases}
-        $$</p>
+        </p>
     </div>
+
+    <!-- Step 1 -->
+    <div class="card">
+        <p><b>Step 1: Augmented Matrix</b></p>
+        <pre>
+1, 1, 1 | 6
+2, 3, 1 | 11
+3, 1, 2 | 11
+        </pre>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+        <p><b>Step 2: Eliminate below pivot (Row 2 - 2×Row 1, Row 3 - 3×Row 1)</b></p>
+        <pre>
+1, 1, 1 | 6
+0, 1, -1 | -1
+0, -2, -1 | -7
+        </pre>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+        <p><b>Step 3: Eliminate below second pivot (Row 3 + 2×Row 2)</b></p>
+        <pre>
+1, 1, 1 | 6
+0, 1, -1 | -1
+0, 0, -3 | -9
+        </pre>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card">
+        <p><b>Step 4: Back Substitution</b></p>
+        <pre>
+z = 3
+y = 2
+x = 1
+        </pre>
+    </div>
+
+    <!-- Final Answer -->
+    <div class="card">
+        <p><b>Final Answer:</b></p>
+        <p style="text-align:center;">x = 1, y = 2, z = 3</p>
+    </div>
+
+
+    <!-- ================= EXAMPLE 2 ================= -->
+    <div class="card">
+        <p><b>Example 2:</b></p>
+        <p>
+        2x + y - z = 8 <br>
+        -3x - y + 2z = -11 <br>
+        -2x + y + 2z = -3
+        </p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="card">
+        <p><b>Step 1: Augmented Matrix</b></p>
+        <pre>
+2, 1, -1 | 8
+-3, -1, 2 | -11
+-2, 1, 2 | -3
+        </pre>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="card">
+        <p><b>Step 2: Eliminate below pivot</b></p>
+        <pre>
+2, 1, -1 | 8
+0, 0.5, 0.5 | 1
+0, 2, 1 | 5
+        </pre>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="card">
+        <p><b>Step 3: Eliminate below second pivot</b></p>
+        <pre>
+2, 1, -1 | 8
+0, 0.5, 0.5 | 1
+0, 0, -1 | 1
+        </pre>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="card">
+        <p><b>Step 4: Back Substitution</b></p>
+        <pre>
+z = -1
+y = 3
+x = 2
+        </pre>
+    </div>
+
+    <!-- Final Answer -->
+    <div class="card">
+        <p><b>Final Answer:</b></p>
+        <p style="text-align:center;">x = 2, y = 3, z = -1</p>
+    </div>
+
 </div>
 
 </div>
